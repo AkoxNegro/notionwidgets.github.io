@@ -3,8 +3,9 @@ const sumar = document.getElementById("incr");
 const restar = document.getElementById("decr");
 const reset = document.getElementById("reset");
 
-let numero = 0;
-localStorage.setItem("num",numero);
+
+var numero = localStorage.getItem('contado') || 0; 
+
 sumar.addEventListener("click", ()=>{
     numero++;
     contador.innerHTML = numero;
@@ -24,6 +25,4 @@ reset.addEventListener("click", ()=>{
     numero = 0;
     contador.innerHTML = numero;
 });
-
-locaStorage.getItem(numero);
 
