@@ -25,3 +25,5 @@ reset.addEventListener("click", ()=>{
     contador.innerHTML = numero;
 });
 
+localStorage.setItem("num",numero);
+
