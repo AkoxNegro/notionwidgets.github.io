@@ -4,7 +4,7 @@ const restar = document.getElementById("decr");
 const reset = document.getElementById("reset");
 
 let numero = 0;
-
+localStorage.setItem("num",numero);
 sumar.addEventListener("click", ()=>{
     numero++;
     contador.innerHTML = numero;
@@ -25,5 +25,5 @@ reset.addEventListener("click", ()=>{
     contador.innerHTML = numero;
 });
 
-localStorage.setItem("num",numero);
+locaStorage.getItem(numero);
 
