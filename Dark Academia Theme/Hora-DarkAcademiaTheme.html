@@ -18,7 +18,7 @@
 	    --text-color:#54342b;
 	    --background-image:linear-gradient(#a8835d, #b69b7d );
 	    --font-type: 'Aboreto', sans-serif;
-	    --fontsize: 35px;
+	    --fontsize: 28px;
 	}
 }
 
@@ -28,7 +28,7 @@
 	    --text-color:#b69b7d;
 	    --background-image:linear-gradient(#704a2e, #774c3a);
 	    --font-type: 'Aboreto', sans-serif;
-	    --fontsize: 35px
+	    --fontsize: 28px;
         }
 }
 
@@ -50,22 +50,20 @@ h1 {
     height: 100%;
     width: 100%;
 }
-
 .table-cell {
     display: table-cell;
     vertical-align: middle;
     text-align: center;
 }
 
-.card {
+.card, .card2, .card3 {
     position: absolute;
     top:10px;
-    left: 10px;
     padding: 2px 5px 2px 5px;
     border: 0px;
     border-radius: 10px;
     background: var(--background-image);  
-    width: 100px;
+    width: 80px;
     font-size: var(--fontsize);
     font-family: var(--font-type);
     color: var(--text-color);  /*color texto*/
@@ -73,53 +71,24 @@ h1 {
     /*box-shadow: 2px 2px 1px 0px #330835;*/
 }
 
-.card:hover {
-    margin-top: 2px;
-    box-shadow: none;
-}
 
+.card{
+ left: 10px;
+}
 .card2 {
-    position: absolute;
-    top: 10px;
-    left: 124px;
-    padding: 2px 5px 2px 5px;
-    border: 0px;
-    border-radius: 10px;
-    background: var(--background-image);  
-    width: 100px;
-    font-size: var(--fontsize);
-    font-family: var(--font-type);
-    color: var(--text-color);  /*color texto*/
-    display: inline-block;
-    /*box-shadow: 2px 2px 1px 0px #330835;*/
+    left: 104px;
 }
-
-.card2:hover {
-    margin-top: 2px;
-    box-shadow: none;
-}
-
 
 .card3 {
-    position: absolute;
-    top: 10px;
-    left: 238px;
-    padding: 2px 5px 2px 5px;
-    border: 0px;
-    border-radius: 10px;
-    background: var(--background-image);  
-    width: 100px;
-    font-size: var(--fontsize);
-    letter-spacing: -7px;
-    color: var(--text-color);  /*color texto*/
-    display: inline-block;
-    /*box-shadow: 2px 2px 1px 0px #330835;*/
+    left: 198px;
 }
 
-.card3:hover {
+.card:hover, .card2:hover, .card3:hover {
     margin-top: 2px;
     box-shadow: none;
 }
+
+
 
 .clock {
     display: inline;
