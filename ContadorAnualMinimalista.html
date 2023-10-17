@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--     <link rel="stylesheet" href= "https://fonts.googleapis.com/css2?family=Titan+One" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+      /*CSS RESETS*/
+@media (prefers-color-scheme: light){
+	:root{
+	    --bg-color:#fff;
+	    --background-color:black;
+	    --color-numbers: black;
+	    --fontsize-numbers: 4em;
+	    --color-label: black;
+	    --fontsize-label: .6em;
+	}
+}
+
+@media (prefers-color-scheme: dark){
+        :root{
+	    --bg-color:#000;
+	    --background-color: white;
+	    --color-numbers: white;
+	    --fontsize-numbers: 4em;
+	    --color-label: white;
+	    --fontsize-label: .6em;
+        }
+}
+
+
+
+
+body{
+    background-color: var(--bg-color);
+}
+
+.container{
+ border-radius: 9px;
+  border: 3px ridge var(--background-color);
+  padding: 15px;
+  width: 450px;
+  height: 40px;
+}
+
+
+  
+#timer {
+  color: var(--color-label);
+  text-align: center;
+  text-transform: uppercase;
+  margin-left: -35px;
+  margin-top: -15px;
+  font-family: 'Gill-Sans', sans-serif;
+  font-size: var(--fontsize-label);
+  letter-spacing: 0px;
+  height: 30px;
+
+}
+
+.quarters, .months, .weeks, .days, .hours, .minutes, .seconds {
+  /*margin-top: %2;*/
+  display: inline-block;
+  padding-top: 00px;
+  padding-left:15px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  width: 30px;
+  height: 50px;
+  /*border-radius: 5px;
+  background: var(--background-image);*/
+}
+
+
+.numbers {
+  font-family: 'Barlow', sans-serif;
+  font-size: var(--fontsize-numbers);
+  text-align: center;
+}
+
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+<div id="timer">
+<div class="quarters">
+        <div id="quarters" class="numbers "> </div>quarters</div>
+<div class="months"> 
+        <div id="months" class="numbers "> </div>months</div> 
+    <div class="weeks"> 
+        <div id="weeks" class="numbers "> </div>weeks</div> 
+    <div class="days"> 
+        <div id="days" class="numbers "> </div>days</div> 
+      <div class="hours"> 
+        <div  id="hours" class="numbers"> </div>hours</div> 
+      <div class="minutes"> 
+        <div  id="minutes" class="numbers"> </div>minutes</div> 
+      <div   class="seconds"> 
+        <div id="seconds" class="numbers"> </div>seconds</div> 
+      </div>
+
+</div>
+
+</body>
+<script>
+
+
+
+    const year = new Date().getFullYear();
+    const myDate = new Date('Jan 01, 2024 00:00:00');
+console.log(myDate);
+
+// countdown
+let timer = setInterval(function() {
+
+  // get today's date
+  const today = new Date().getTime();
+
+  // get the difference
+  const diff = myDate - today;
+
+  const finalDate = new Date(myDate);
+  const todayDate = new Date(today);
+
+
+  //var nYears  = myDate.getUTCFullYear() - today.getUTCFullYear();
+  let months = finalDate.getMonth() - todayDate.getMonth() + (12 * (finalDate.getFullYear() - todayDate.getFullYear()))-1;
+  let quarters = Math.floor(months/3);
+  let weeks = Math.floor(diff / (7 * 24 * 60 * 60 * 1000));
+  let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+  // display
+  document.getElementById("quarters").innerHTML= quarters
+  document.getElementById("months").innerHTML= months
+  document.getElementById("weeks").innerHTML=weeks
+  document.getElementById("days").innerHTML=days
+  document.getElementById("hours").innerHTML=hours
+  document.getElementById("minutes").innerHTML=minutes
+  document.getElementById("seconds").innerHTML=seconds
+
+
+
+}, 1);
+</script>
+</html>
