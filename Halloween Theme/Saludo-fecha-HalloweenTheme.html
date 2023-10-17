@@ -1,0 +1,172 @@
+<!-- original : https://codepen.io/SeanNorton/pen/LWBXQL -->
+<!-- Muestra fecha y saludo, el color cambia según el tema sea oscuro o claro, el color que se encuentra dentro del texto es de tipo gradiente -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+           <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Creepster&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>greeting2</title>
+
+    <style>
+
+
+        /*CSS RESETS*/
+@media (prefers-color-scheme: light){
+	:root{
+	    --bg-color:#fff;
+	    --text-color:#79121a;
+	    --background-image:linear-gradient(to top left, #f2913d 30%, #f26716 100%);
+	    --box-shadow:#79121a;
+	}
+}
+
+@media (prefers-color-scheme: dark){
+        :root{
+	    --bg-color:#000;
+	    --text-color:#a79595;
+	    --background-image:linear-gradient(to top left, #5a4154 15%, #644475 100%);
+            --box-shadow:#a79595;
+        }
+}
+
+
+
+
+body{
+    background-color: var(--bg-color);
+    line-height: 1.6;
+
+}
+
+h1 {
+    margin-top: 0;
+}
+
+
+/*CSS START*/
+
+.full-table {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+.table-cell {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.card {
+    padding: 10px 25px 10px 25px;
+    border-radius: 10px;
+    background: var(--background-image); /*color*/    
+    width: 50vw;
+    color: var(--text-color);
+    display: inline-block;
+    box-shadow: 2px 2px 1px 0px var(--box-shadow);
+}
+
+.card:hover {
+    margin-top: 2px;
+    box-shadow: none;
+}
+.date {
+    display: inline;
+    min-width: 162px;
+    font-family: 'Creepster', sans-serif;
+    text-transform: uppercase;
+    font-size: 2.1em;
+    padding-right: 30px;
+}
+.greet{
+    
+    display:inline;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+     padding-right: 30px;
+}
+
+    </style>
+</head>
+<body>
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto:400,700" rel="stylesheet">
+
+<div class="full-table">
+  <div class="table-cell">
+    
+    <div class="card">
+        <div class="greet" id="greet"></div>
+      <div class="date" id="date"></div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<script>;
+
+    function date() {
+var today = new Date();
+const opciones = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
+document.getElementById('date').innerHTML = today.toLocaleDateString('es-MX', opciones);
+}
+
+
+function clock() {
+var today = new Date();
+var hour = zeros(twelveHour(today.getHours()));
+var minutes = zeros(today.getMinutes());
+var seconds = zeros(today.getSeconds());
+if(today.getHours() >=12){
+    seconds+=" pm"
+}
+else{
+    seconds+=" am"
+}
+hrs = today.getHours();
+if (hrs < 12)
+        greet = 'Buenos días  ';
+    else if (hrs >= 12 && hrs <= 19)
+        greet = 'Buenas tardes ';
+    else if (hrs >= 19 && hrs <= 24)
+        greet = 'Buenas noches ';
+
+document.getElementById('greet').innerHTML = greet;
+}
+
+function twelveHour(hour) {
+if (hour > 12) {
+    return hour -= 12 
+} else if (hour === 0) {
+    return hour = 12;
+} else {
+    return hour
+}
+}
+    
+// adds zero infront of single digit number
+function zeros(num) {
+if (num < 10) {
+    num = '0' + num
+};
+return num;
+}
+
+function dateTime() {
+date();
+clock();
+setTimeout(dateTime, 500);
+}
+
+dateTime()
+// END
+</script>
+
+</body>
+</html>

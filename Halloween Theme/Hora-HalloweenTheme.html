@@ -1,0 +1,192 @@
+<!-- original : https://codepen.io/SeanNorton/pen/LWBXQL -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Creepster&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora</title>
+
+    <style>
+
+        /*CSS RESETS*/
+@media (prefers-color-scheme: light){
+	:root{
+	    --bg-color:#fff;
+	    --text-color:#79121a;
+	    --background-image:linear-gradient(#f2913d, #f26716);
+	     --font-type: 'Creepster', sans-serif;
+	    --fontsize: 40px;
+	    --height-clock: 120px;
+	}
+}
+
+@media (prefers-color-scheme: dark){
+        :root{
+	    --bg-color:#000;
+	    --text-color:#a79595;
+	    --background-image:linear-gradient(#5a4154, #644475);
+	     --font-type: 'Creepster', sans-serif;
+	    --fontsize: 40px;
+	    --height-clock: 120px;
+        }
+}
+
+body{
+   background-color: var(--bg-color);
+    line-height: 1.4;
+
+}
+
+h1 {
+    margin-top: 0;
+}
+
+
+/*CSS START*/
+
+.full-table {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+.table-cell {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.card, .card2, .card3 {
+    position: absolute;
+    top:10px;
+    padding: 2px 5px 2px 5px;
+    border: 0px;
+    border-radius: 10px;
+    background: var(--background-image);
+    width: 100px;
+    height: var(--height-clock);
+    font-size: var(--fontsize);
+    font-family: var(--font-type);
+    color: var(--text-color);  /*color texto*/
+    display: inline-block;
+    /*box-shadow: 2px 2px 1px 0px #330835;*/
+}
+.card {
+    left: 10px;
+}
+.card2 {
+    left: 124px;
+}
+.card3 {
+    left: 238px;
+}
+
+.card:hover, .card2:hover, .card3:hover {
+    margin-top: 2px;
+    box-shadow: none;
+}
+
+
+.clock {
+    display: inline;
+    font-family: var(--font-type);
+    font-size: 2em;
+   
+}
+
+.time {
+    display: inline;
+    min-width: 37px;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto:400,700" rel="stylesheet">
+
+<div class="full-table">
+  <div class="table-cell">
+    
+    <div class="card">
+      <div class="clock"> 
+        <div class="time" id="hour"></div>
+      </div>
+    </div>
+
+
+    <div class="card2">
+      <div class="clock"> 
+        <div class="time" id="min"></div>
+      </div>
+    </div>
+
+    <div class="card3">
+      <div class="clock"> 
+        <div class="time" id="tipotiempo"></div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<script>_semana = ['Domingo', 'Lunes', 'martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+
+    function date() {
+var today = new Date();
+}
+
+
+function clock() {
+var today = new Date();
+var hour = zeros(twelveHour(today.getHours()));
+var minutes = zeros(today.getMinutes());
+var tipotiempo = "";
+if(today.getHours() >=12){
+     tipotiempo = "pm"
+}
+else{
+    tipotiempo = "am"
+}
+hrs = today.getHours();
+document.getElementById('hour').innerHTML = hour;
+document.getElementById('min').innerHTML = minutes;
+document.getElementById('tipotiempo').innerHTML = tipotiempo;
+
+}
+
+function twelveHour(hour) {
+if (hour > 12) {
+    return hour -= 12 
+} else if (hour === 0) {
+    return hour = 12;
+} else {
+    return hour
+}
+}
+    
+// adds zero infront of single digit number
+function zeros(num) {
+if (num < 10) {
+    num = '0' + num
+};
+return num;
+}
+
+function dateTime() {
+date();
+clock();
+setTimeout(dateTime, 500);
+}
+
+dateTime()
+// END
+</script>
+
+</body>
+</html>
