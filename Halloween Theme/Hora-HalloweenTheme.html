@@ -36,7 +36,7 @@
 
 body{
    background-color: var(--bg-color);
-    line-height: 1.4;
+    line-height: 1.6;
 
 }
 
@@ -59,7 +59,7 @@ h1 {
     text-align: center;
 }
 
-.card, .card2, .card3 {
+.card, .card2{
     position: absolute;
     top:10px;
     padding: 2px 5px 2px 5px;
@@ -80,15 +80,18 @@ h1 {
 .card2 {
     left: 124px;
 }
-.card3 {
-    left: 238px;
+
+.tipoTiempo
+{
+ margin-top: -135px;
+ font-size: .36em;
+ margin-left: 55px;
 }
 
-.card:hover, .card2:hover, .card3:hover {
+.card:hover, .card2:hover {
     margin-top: 2px;
     box-shadow: none;
 }
-
 
 .clock {
     display: inline;
@@ -102,11 +105,10 @@ h1 {
     min-width: 37px;
 }
 
-
-
-
     </style>
 </head>
+
+
 <body>
     <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto:400,700" rel="stylesheet">
 
@@ -119,18 +121,14 @@ h1 {
       </div>
     </div>
 
-
     <div class="card2">
-      <div class="clock"> 
+      <div class="clock">
         <div class="time" id="min"></div>
+        <div class="tipoTiempo" id="tipotiempo"></div>
+
       </div>
     </div>
 
-    <div class="card3">
-      <div class="clock"> 
-        <div class="time" id="tipotiempo"></div>
-      </div>
-    </div>
     
   </div>
 </div>
