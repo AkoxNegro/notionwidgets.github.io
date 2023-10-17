@@ -18,7 +18,8 @@
 	    --text-color:#54342b;
 	    --background-image:linear-gradient(#a8835d, #b69b7d );
 	    --font-type: 'Aboreto', sans-serif;
-	    --fontsize: 28px;
+	    --fontsize: 35px;
+	    --height-clock: 120px;
 	}
 }
 
@@ -28,13 +29,14 @@
 	    --text-color:#b69b7d;
 	    --background-image:linear-gradient(#704a2e, #774c3a);
 	    --font-type: 'Aboreto', sans-serif;
-	    --fontsize: 28px;
+	    --fontsize: 35px;
+	    --height-clock: 120px;
         }
 }
 
 body{
    background-color: var(--bg-color);
-    line-height: 1.6;
+    line-height: 1.8;
 
 }
 
@@ -63,7 +65,8 @@ h1 {
     border: 0px;
     border-radius: 10px;
     background: var(--background-image);  
-    width: 60px;
+    width: 100px;
+    height: var(--height-clock);
     font-size: var(--fontsize);
     font-family: var(--font-type);
     color: var(--text-color);  /*color texto*/
@@ -76,35 +79,30 @@ h1 {
  left: 10px;
 }
 .card2 {
-    left: 84px;
+    left: 124px;
 }
 
-.card3 {
-    left: 158px;
+.tipoTiempo
+{
+ margin-top: -125px;
+ font-size: .36em;
+ margin-left: 55px;
 }
 
-.card:hover, .card2:hover, .card3:hover {
+.card:hover, .card2:hover{
     margin-top: 2px;
     box-shadow: none;
 }
 
-
-
 .clock {
     display: inline;
     font-family:  var(--font-type);
-    font-size: 1.6em;
-   
+    font-size: 2em;
 }
 
 .time {
     display: inline;
     min-width: 37px;
-}
-
-.colon {
-    font-size: 1.1em;
-    display: inline-block;
 }
 
 
@@ -128,14 +126,11 @@ h1 {
     <div class="card2">
       <div class="clock"> 
         <div class="time" id="min"></div>
+        <div class="tipoTiempo" id="tipotiempo"></div>
       </div>
     </div>
 
-    <div class="card3">
-      <div class="clock"> 
-        <div class="time" id="tipotiempo"></div>
-      </div>
-    </div>
+
     
   </div>
 </div>
