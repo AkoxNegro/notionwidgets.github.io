@@ -6,13 +6,26 @@
     box-sizing: border-box;
 }
 
+@media (prefers-color-scheme: light){
+	:root{
+	    --bg-color:#fff;
+	}
+}
+
+@media (prefers-color-scheme: dark){
+        :root{
+	    --bg-color:#000;
+        }
+}
+
+
 body{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     font-family: Montserrat, sans-serif;
-    background: white;
+    background: var(--bg-color);
    
 }
 
