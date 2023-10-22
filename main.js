@@ -1,28 +1,30 @@
-const contador = document.getElementById("contar");
-const sumar = document.getElementById("incr");
-const restar = document.getElementById("decr");
-const reset = document.getElementById("reset");
 
 
-var numero = localStorage.getItem('contado') || 0; 
 
-sumar.addEventListener("click", ()=>{
-    numero++;
-    contador.innerHTML = numero;
-});
+let numero = document.getElementById("contar");
+numero.innerText = localStorage.getItem("contar") || "0";
 
-restar.addEventListener("click", ()=>{
+function incrementar(){
+    numero.innerText = parseInt(numero.innerText) + 1;
+    guardarNum();
+}
 
-    if(numero==0){}
-    else{
-        numero--;
-        contador.innerHTML = numero;
+function decrementar(){
+    if(numero.innerText >'0')
+    {
+        numero.innerText = parseInt(numero.innerText) -1;
     }
+    else{
+        numero.innerText = '0';
+    }
+    guardarNum();
+}
 
-});
+function reset0(){
+    numero.innerText = '0';
+     guardarNum();
+}
 
-reset.addEventListener("click", ()=>{
-    numero = 0;
-    contador.innerHTML = numero;
-});
-
+function guardarNum(){
+    localStorage.setItem("contar", numero.innerText);
+}
