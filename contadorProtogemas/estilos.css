@@ -27,7 +27,7 @@ body{
     display: flex;
     margin-left:20px;
     margin-top: 15px;
-    height: 80vh;
+    height: 40vh;
     font-family: 'Montserrat', sans-serif;
     background: var(--bg-color);
    
@@ -36,8 +36,8 @@ body{
 
 .contenedor{
     display: flex;
-    width: 400px;
-    height: 220px;
+    width: 300px;
+    height: 170px;
    /*justify-content: center;*/
    color: #0c0c0c;
    vertical-align: 20px;
@@ -55,18 +55,18 @@ body{
 
 .titulo{
     margin-top: 10px;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: 'Play', sans-serif;
     color: aliceblue;
 }
 
 .contar{
-    margin-top: 30px;
-    font-size: 4rem;
+    margin-top: 20px;
+    font-size: 2.5rem;
 }
 
 .botones{
-    margin-top:2px; /*ditancia entre el texto*/
+    margin-top:15px; /*ditancia entre el texto*/
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -74,15 +74,15 @@ body{
 }
 
 button{
-    margin: 10px;
-    width: 50px;
-    height: 25px;
+    margin: 7px;
+    width: 35px;
+    height: 20px;
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: .7rem;
     background: snow;
     opacity: 0.85;
     border:none;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 span{
@@ -91,6 +91,6 @@ span{
 }
 
 .reset{
-    width: 50px;
-    height: 25px;
+    width: 35px;
+    height: 20px;
 }
