@@ -1,0 +1,196 @@
+<!-- original : https://codepen.io/SeanNorton/pen/LWBXQL -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Bebas+Neue&family=Cabin+Sketch:wght@400;700&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>greeting2</title>
+
+    <style>
+
+        /*CSS RESETS*/
+@media (prefers-color-scheme: light){
+	:root{
+	    --bg-color:#fff;
+	    --text-color:black;
+	    --background-image:#fff;
+        --font-type: 'Cabin Sketch', sans-serif;
+	    --fontsize: 21vw;
+	    --height-clock: 95%;
+	     --border-pref: 2px solid black;
+	}
+}
+
+@media (prefers-color-scheme: dark){
+        :root{
+	    --bg-color:#191919;
+	    --text-color:lightgray;
+	    --background-image:#191919;
+        --font-type: 'Cabin Sketch', sans-serif;
+	    --fontsize: 21vw;
+	    --height-clock: 95%;
+	    --border-pref: 2px solid lightgray;
+	}
+
+}
+
+body{
+   background-color: var(--bg-color);
+    line-height: 1.5;
+
+}
+
+h1 {
+    margin-top: 0;
+}
+
+
+/*CSS START*/
+
+.full-table {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+.table-cell {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.card, .card2 {
+    position: absolute;
+    top:10px;
+    left: 10px;
+    padding: 2% 5% 2% -1%;
+    border: var(--border-pref);
+    border-radius: 10px;
+    background: var(--background-image) 10%;
+    width: 45%; /*95px*/
+    max-height: var(--height-clock);
+    font-size: var(--fontsize);
+    font-family: var(--font-type);
+    color: var(--text-color);  /*color texto*/
+    display: inline-block;
+}
+
+.card:hover, .card2:hover {
+    margin-top: 2px;
+    box-shadow: none;
+}
+.card {
+    left: 1%;
+}
+.card2 {
+    left: 47%;
+}
+
+.tipoTiempo
+{
+ margin-top: -118%; /*-145*/
+ font-size: 10vw;
+ margin-left: 63%;
+ margin-bottom: 78%;
+ text-transform: uppercase;
+}
+
+.clock {
+    display: inline;
+    font-family: var(--font-type);
+    font-size: 35vw;
+}
+
+.time {
+    display: inline;
+    min-width: 10vw;
+}
+    </style>
+</head>
+
+<body>
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto:400,700" rel="stylesheet">
+
+<div class="full-table">
+  <div class="table-cell">
+    
+    <div class="card">
+      <div class="clock"> 
+        <div class="time" id="hour"></div>
+      </div>
+    </div>
+
+
+    <div class="card2">
+      <div class="clock"> 
+        <div class="time" id="min"></div>
+         <div class="tipoTiempo" id="tipotiempo"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// Creamos array con los meses del año
+//const meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+// Creamos array con los días de la semana
+//const dias_semana = ['Domingo', 'Lunes', 'martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+
+    function date() {
+var today = new Date();
+}
+
+
+function clock() {
+var today = new Date();
+var hour = zeros(twelveHour(today.getHours()));
+var minutes = zeros(today.getMinutes());
+var tipotiempo = "";
+if(today.getHours() >=12){
+     tipotiempo = "pm"
+}
+else{
+    tipotiempo = "am"
+}
+hrs = today.getHours();
+document.getElementById('hour').innerHTML = hour;
+document.getElementById('min').innerHTML = minutes;
+document.getElementById('tipotiempo').innerHTML = tipotiempo;
+
+}
+
+function twelveHour(hour) {
+if (hour > 12) {
+    return hour -= 12 
+} else if (hour === 0) {
+    return hour = 12;
+} else {
+    return hour
+}
+}
+    
+// adds zero infront of single digit number
+function zeros(num) {
+if (num < 10) {
+    num = '0' + num
+};
+return num;
+}
+
+function dateTime() {
+date();
+clock();
+setTimeout(dateTime, 500);
+}
+
+dateTime()
+// END
+</script>
+
+</body>
+</html>
