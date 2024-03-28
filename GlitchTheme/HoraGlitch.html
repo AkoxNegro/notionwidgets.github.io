@@ -128,16 +128,16 @@ h1 {
 
 <div class="full-table">
   <div class="table-cell">
-    
+
     <div class="card">
-      <div class="clock"> 
+      <div class="clock">
         <div class="time" id="hour"></div>
       </div>
     </div>
 
 
     <div class="card2">
-      <div class="clock"> 
+      <div class="clock">
         <div class="time" id="min"></div>
          <div class="tipoTiempo" id="tipotiempo"></div>
       </div>
@@ -177,14 +177,14 @@ document.getElementById('tipotiempo').innerHTML = tipotiempo;
 
 function twelveHour(hour) {
 if (hour > 12) {
-    return hour -= 12 
+    return hour -= 12
 } else if (hour === 0) {
     return hour = 12;
 } else {
     return hour
 }
 }
-    
+
 // adds zero infront of single digit number
 function zeros(num) {
 if (num < 10) {
