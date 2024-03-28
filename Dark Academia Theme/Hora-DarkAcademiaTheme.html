@@ -18,8 +18,8 @@
 	    --text-color:#54342b;
 	    --background-image:linear-gradient(#a8835d, #b69b7d );
 	    --font-type: 'Aboreto', sans-serif;
-	    --fontsize: 30px;
-	    --height-clock: 100px;
+	    --fontsize: 15vw;
+	    --height-clock: 95%;
 	}
 }
 
@@ -29,14 +29,14 @@
 	    --text-color:#b69b7d;
 	    --background-image:linear-gradient(#704a2e, #774c3a);
 	    --font-type: 'Aboreto', sans-serif;
-	    --fontsize: 30px;
-	    --height-clock: 100px;
+	    --fontsize: 15vw;
+	    --height-clock: 95%;
         }
 }
 
 body{
    background-color: var(--bg-color);
-    line-height: 1.8;
+    line-height: 1.3;
 
 }
 
@@ -58,15 +58,15 @@ h1 {
     text-align: center;
 }
 
-.card, .card2, .card3 {
+.card, .card2{
     position: absolute;
     top:10px;
-    padding: 2px 5px 2px 5px;
+    padding: 2% 5% 2% -1%;
     border: 0px;
     border-radius: 10px;
     background: var(--background-image);  
-    width: 80px;
-    height: var(--height-clock);
+    width: 40%;
+    max-height: var(--height-clock);
     font-size: var(--fontsize);
     font-family: var(--font-type);
     color: var(--text-color);  /*color texto*/
@@ -76,17 +76,18 @@ h1 {
 
 
 .card{
- left: 10px;
+ left: 1%;
 }
 .card2 {
-    left: 104px;
+    left: 42%;
 }
 
 .tipoTiempo
 {
- margin-top: -110px;
- font-size: .36em;
- margin-left: 50px;
+ margin-top: -106%;
+ font-size: 7vw;
+ margin-left: 70%;
+ margin-bottom: 83%;
 }
 
 .card:hover, .card2:hover{
@@ -97,12 +98,12 @@ h1 {
 .clock {
     display: inline;
     font-family:  var(--font-type);
-    font-size: 2em;
+    font-size: 32vw
 }
 
 .time {
     display: inline;
-    min-width: 37px;
+    min-width: 10vw;
 }
 
 
