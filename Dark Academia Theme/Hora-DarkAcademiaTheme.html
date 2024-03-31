@@ -18,7 +18,7 @@
 	    --text-color:#54342b;
 	    --background-image:linear-gradient(#a8835d, #b69b7d );
 	    --font-type: 'Aboreto', sans-serif;
-	    --fontsize: 15vw;
+	    --fontsize: 12vw;
 	    --height-clock: 95%;
 	}
 }
@@ -29,14 +29,14 @@
 	    --text-color:#b69b7d;
 	    --background-image:linear-gradient(#704a2e, #774c3a);
 	    --font-type: 'Aboreto', sans-serif;
-	    --fontsize: 15vw;
+	    --fontsize: 12vw;
 	    --height-clock: 95%;
         }
 }
 
 body{
    background-color: var(--bg-color);
-    line-height: 1.3;
+    line-height: 1.6;
 
 }
 
@@ -98,7 +98,7 @@ h1 {
 .clock {
     display: inline;
     font-family:  var(--font-type);
-    font-size: 32vw
+    font-size: 28vw;
 }
 
 .time {
@@ -127,7 +127,7 @@ h1 {
     <div class="card2">
       <div class="clock"> 
         <div class="time" id="min"></div>
-        <div class="tipoTiempo" id="tipotiempo"></div>
+        <!-- <div class="tipoTiempo" id="tipotiempo"></div>-->
       </div>
     </div>
 
@@ -149,7 +149,8 @@ var today = new Date();
 
 function clock() {
 var today = new Date();
-var hour = zeros(twelveHour(today.getHours()));
+// var hour = zeros(twelveHour(today.getHours()));
+var hour = zeros(today.getHours());
 var minutes = zeros(today.getMinutes());
 var tipotiempo = "";
 if(today.getHours() >=12){
