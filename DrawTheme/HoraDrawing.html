@@ -19,7 +19,7 @@
 	    --text-color:black;
 	    --background-image:#fff;
         --font-type: 'Cabin Sketch', sans-serif;
-	    --fontsize: 21vw;
+	    --fontsize: 18vw;
 	    --height-clock: 95%;
 	     --border-pref: 2px solid black;
 	}
@@ -31,7 +31,7 @@
 	    --text-color:lightgray;
 	    --background-image:#191919;
         --font-type: 'Cabin Sketch', sans-serif;
-	    --fontsize: 21vw;
+	    --fontsize: 18vw;
 	    --height-clock: 95%;
 	    --border-pref: 2px solid lightgray;
 	}
@@ -71,7 +71,7 @@ h1 {
     border: var(--border-pref);
     border-radius: 10px;
     background: var(--background-image) 10%;
-    width: 45%; /*95px*/
+    width: 40%; /*95px*/
     max-height: var(--height-clock);
     font-size: var(--fontsize);
     font-family: var(--font-type);
@@ -87,13 +87,13 @@ h1 {
     left: 1%;
 }
 .card2 {
-    left: 47%;
+    left: 42%;
 }
 
 .tipoTiempo
 {
  position: absolute;
- margin-top: -700px; /*-145*/
+ margin-top: -114%; /*-145*/
  font-size: 8vw;
  margin-left: 73%;
  text-transform: uppercase;
@@ -102,7 +102,7 @@ h1 {
 .clock {
     display: inline;
     font-family: var(--font-type);
-    font-size: 32vw;
+    font-size: 30vw;
 }
 
 .time {
@@ -148,15 +148,16 @@ var today = new Date();
 
 function clock() {
 var today = new Date();
-var hour = zeros(twelveHour(today.getHours()));
+//var hour = zeros(twelveHour(today.getHours()));
+var hour = zeros(today.getHours());
 var minutes = zeros(today.getMinutes());
 var tipotiempo = "";
-if(today.getHours() >=12){
-     tipotiempo = "pm"
-}
-else{
-    tipotiempo = "am"
-}
+// if(today.getHours() >=12){
+//      tipotiempo = "pm"
+// }
+// else{
+//     tipotiempo = "am"
+// }
 hrs = today.getHours();
 document.getElementById('hour').innerHTML = hour;
 document.getElementById('min').innerHTML = minutes;
