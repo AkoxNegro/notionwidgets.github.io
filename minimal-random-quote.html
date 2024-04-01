@@ -11,14 +11,14 @@
     @media (prefers-color-scheme: light){
 	:root{
         --corner-color: dimgray;
-        --background-color: black
+        --background-color: black;
         }
 
 
      @media (prefers-color-scheme: dark){
 	:root{
         --corner-color: lightgray;
-        --background-color: white
+        --background-color: white;
         }
          
         .widget {
@@ -80,7 +80,7 @@ quotes=[
 
 const INTERVAL = 864;
 
-function dispalyQuote(){
+function displayQuote(){
 
 
     var randomQuote = quotes[Math.floor(Math.random() * quotes.length)]
@@ -92,11 +92,11 @@ function dispalyQuote(){
     });
     }
 
-    function dispalyWidget() {
-        dispalyQuote();
-        setTimeout(dispalyWidget, quotes.length*INTERVAL);
+    function displayWidget() {
+        displayQuote();
+        setTimeout(displayWidget, quotes.length*INTERVAL);
     }
-    dispalyWidget()
+    displayWidget()
 
 </script>
 
